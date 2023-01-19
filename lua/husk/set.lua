@@ -15,7 +15,7 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/vim/undodir"
 vim.opt.undofile = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
@@ -25,4 +25,15 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
+
+
+local autogroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+
+autocmd("TextYankPost", {
+	desc = "highlight on yank",
+	callback = function()
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = "200" })
+	end,
+})
 
