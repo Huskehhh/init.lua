@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
   use('ThePrimeagen/harpoon')
   use('mbbill/undotree')
   use('navarasu/onedark.nvim')
+  use('tpope/vim-fugitive')
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -32,7 +33,6 @@ return require('packer').startup(function(use)
 
 		  -- Snippets
 		  {'L3MON4D3/LuaSnip'},
-		  -- Snippet Collection (Optional)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
@@ -43,9 +43,9 @@ return require('packer').startup(function(use)
   use {
       'nvim-tree/nvim-tree.lua',
       requires = {
-          'nvim-tree/nvim-web-devicons', -- optional, for file icons
+          'nvim-tree/nvim-web-devicons',
       },
-      tag = 'nightly' -- optional, updated every week. (see issue #1193)
+      tag = 'nightly'
   }
 
   use {
@@ -53,9 +53,15 @@ return require('packer').startup(function(use)
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
-  use {
-      'lewis6991/gitsigns.nvim',
-  }
+  use('lewis6991/gitsigns.nvim')
 
+  use({
+      "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+      config = function()
+          require("lsp_lines").setup()
+      end,
+  })
+
+  use('github/copilot.vim')
 
 end)
