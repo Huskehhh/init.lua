@@ -63,5 +63,6 @@ return require('packer').startup(function(use)
   })
 
   use('github/copilot.vim')
+  use('j-hui/fidget.nvim')
 
 end)
