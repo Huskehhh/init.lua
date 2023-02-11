@@ -54,14 +54,6 @@ return require('packer').startup(function(use)
   }
 
   use('lewis6991/gitsigns.nvim')
-
-  use({
-      "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-      config = function()
-          require("lsp_lines").setup()
-      end,
-  })
-
   use('github/copilot.vim')
   use('j-hui/fidget.nvim')
 
