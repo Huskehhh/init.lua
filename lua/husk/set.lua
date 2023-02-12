@@ -29,10 +29,10 @@ vim.opt.colorcolumn = "80"
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd("TextYankPost", {
-	desc = "highlight on yank",
-	callback = function()
-		vim.highlight.on_yank({ higroup = "IncSearch", timeout = "200" })
-	end,
+    desc = "highlight on yank",
+    callback = function()
+        vim.highlight.on_yank({ higroup = "IncSearch", timeout = "200" })
+    end,
 })
 
 vim.g.netrw_browse_split = 0
