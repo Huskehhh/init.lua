@@ -184,6 +184,11 @@ _G.packer_plugins = {
     path = "/home/jordyn/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
   },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/home/jordyn/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+    url = "https://github.com/mrjones2014/nvim-ts-rainbow"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/jordyn/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
