@@ -41,6 +41,14 @@ return require('packer').startup(function(use)
         use('mfussenegger/nvim-dap')
 
         use {
+            'saecki/crates.nvim',
+            requires = { 'nvim-lua/plenary.nvim' },
+            config = function()
+                require('crates').setup()
+            end,
+        }
+
+        use {
             'nvim-tree/nvim-tree.lua',
             requires = {
                 'nvim-tree/nvim-web-devicons',

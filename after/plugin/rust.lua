@@ -10,10 +10,15 @@ rt.setup({
 
             vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, { remap = true })
             vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, { remap = true })
-            vim.keymap.set("n", "<leader>fm", function() vim.lsp.buf.format({ async = false }) end, opts)
+            vim.keymap.set("n", "<leader>fm", function() vim.lsp.buf.format({ async = false }) end, { remap = true })
         end,
+
+        settings = {
+            ["rust-analyzer"] = {
+                check = {
+                    command = "clippy"
+                }
+            }
+        },
     },
 })
-
-rt.inlay_hints.set()
-rt.inlay_hints.enable()
