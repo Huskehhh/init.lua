@@ -66,4 +66,9 @@ return require('packer').startup(function(use)
         use('j-hui/fidget.nvim')
         use('numToStr/FTerm.nvim')
         use('mrjones2014/nvim-ts-rainbow')
+
+        use {
+            "folke/trouble.nvim",
+            requires = "nvim-tree/nvim-web-devicons",
+        }
     end)
