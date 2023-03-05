@@ -1,4 +1,5 @@
 local rt = require("rust-tools")
+require('crates').setup()
 
 rt.setup({
     server = {
