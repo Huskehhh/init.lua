@@ -52,7 +52,6 @@ lsp.on_attach(function(_, bufnr)
     vim.keymap.set("n", "<leader>gR", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<leader>sh", function() vim.lsp.buf.signature_help() end, opts)
-    vim.keymap.set("n", "<leader>fm", function() vim.lsp.buf.format({ async = false }) end, opts)
 end)
 
 lsp.nvim_workspace()
@@ -61,3 +60,6 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true,
 })
+
+vim.keymap.set("n", "<leader>fm", function() vim.lsp.buf.format({ async = false }) end, opts)
+vim.keymap.set("v", "<leader>fm", function() vim.lsp.buf.format({ async = false }) end, opts)
