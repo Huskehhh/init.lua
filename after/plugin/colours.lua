@@ -1,6 +1,7 @@
-require('onedark').load()
+-- require('onedark').load()
+local material = require('material')
 
-require('material').setup({
+material.setup({
     plugins = {
         "dap",
         "gitsigns",
@@ -12,3 +13,5 @@ require('material').setup({
         "trouble",
     },
 })
+
+require('material.functions').change_style('darker')

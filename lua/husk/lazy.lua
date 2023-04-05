@@ -14,14 +14,12 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     'ThePrimeagen/harpoon',
     'mbbill/undotree',
-    'navarasu/onedark.nvim',
     'tpope/vim-fugitive',
     'lewis6991/gitsigns.nvim',
     'github/copilot.vim',
     'j-hui/fidget.nvim',
     'numToStr/FTerm.nvim',
     'mrjones2014/nvim-ts-rainbow',
-    'jay-babu/mason-nvim-dap.nvim',
     'folke/neodev.nvim',
     'kylechui/nvim-surround',
     'marko-cerovac/material.nvim',
@@ -29,10 +27,29 @@ local plugins = {
     'RRethy/vim-illuminate',
     'simrat39/rust-tools.nvim',
     'mfussenegger/nvim-dap',
+    'jay-babu/mason-nvim-dap.nvim',
     'lukas-reineke/indent-blankline.nvim',
+    'neovim/nvim-lspconfig',
 
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        'williamboman/mason.nvim',
+        build = ':MasonUpdate',
+        dependencies = { 'williamboman/mason-lspconfig.nvim' },
+    },
+
+    {
+        'ms-jpq/coq_nvim',
+        branch = 'coq',
+    },
+
+    {
+        'ms-jpq/coq.artifacts',
+        branch = 'artifacts',
+    },
+
+    {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.0',
         dependencies = { 'nvim-lua/plenary.nvim' },
     },
 
@@ -46,25 +63,9 @@ local plugins = {
     },
 
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.0',
         dependencies = { 'nvim-lua/plenary.nvim' },
-    },
-
-    {
-        'VonHeikemen/lsp-zero.nvim',
-        dependencies = {
-            { 'neovim/nvim-lspconfig' },
-            { 'williamboman/mason.nvim' },
-            { 'williamboman/mason-lspconfig.nvim' },
-            { 'hrsh7th/nvim-cmp' },
-            { 'hrsh7th/cmp-buffer' },
-            { 'hrsh7th/cmp-path' },
-            { 'saadparwaiz1/cmp_luasnip' },
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'hrsh7th/cmp-nvim-lua' },
-            { 'L3MON4D3/LuaSnip' },
-            { 'rafamadriz/friendly-snippets' },
-        }
     },
 
     {
