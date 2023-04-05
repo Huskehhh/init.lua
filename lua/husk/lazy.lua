@@ -1,11 +1,11 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable",
+        'git',
+        'clone',
+        '--filter=blob:none',
+        'https://github.com/folke/lazy.nvim.git',
+        '--branch=stable',
         lazypath,
     })
 end
@@ -29,6 +29,7 @@ local plugins = {
     'RRethy/vim-illuminate',
     'simrat39/rust-tools.nvim',
     'mfussenegger/nvim-dap',
+    'lukas-reineke/indent-blankline.nvim',
 
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -82,7 +83,7 @@ local plugins = {
     },
 
     {
-        "folke/trouble.nvim",
+        'folke/trouble.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
 
@@ -92,4 +93,4 @@ local plugins = {
     },
 }
 
-require("lazy").setup(plugins)
+require('lazy').setup(plugins)
