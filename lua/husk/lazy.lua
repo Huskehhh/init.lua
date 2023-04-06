@@ -14,7 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     'ThePrimeagen/harpoon',
     'mbbill/undotree',
-    'navarasu/onedark.nvim',
     'tpope/vim-fugitive',
     'lewis6991/gitsigns.nvim',
     'github/copilot.vim',
@@ -29,7 +28,7 @@ local plugins = {
     'RRethy/vim-illuminate',
     'simrat39/rust-tools.nvim',
     'mfussenegger/nvim-dap',
-    'lukas-reineke/indent-blankline.nvim',
+    'marko-cerovac/material.nvim',
 
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',

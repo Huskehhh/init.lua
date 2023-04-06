@@ -6,6 +6,16 @@ lsp.ensure_installed({
     'clangd',
     'ruff_lsp',
     'tsserver',
+    'rust_analyzer',
+    'cmake',
+    'cssls',
+    'dockerls',
+    'docker_compose_language_service',
+    'eslint',
+    'html',
+    'jsonls',
+    'lua_ls',
+    'marksman',
 })
 
 local cmp = require("cmp")
@@ -61,5 +71,5 @@ vim.diagnostic.config({
     virtual_text = true,
 })
 
-vim.keymap.set("n", "<leader>fm", function() vim.lsp.buf.format({ async = false }) end, opts)
-vim.keymap.set("v", "<leader>fm", function() vim.lsp.buf.format({ async = false }) end, opts)
+vim.keymap.set("n", "<leader>fm", function() vim.lsp.buf.format({ async = false }) end)
+vim.keymap.set("v", "<leader>fm", function() vim.lsp.buf.format({ async = false }) end)
