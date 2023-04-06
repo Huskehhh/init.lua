@@ -30,6 +30,8 @@ local plugins = {
     'jay-babu/mason-nvim-dap.nvim',
     'lukas-reineke/indent-blankline.nvim',
     'neovim/nvim-lspconfig',
+    'jose-elias-alvarez/null-ls.nvim',
+    'jay-babu/mason-null-ls.nvim',
 
     {
         'williamboman/mason.nvim',
@@ -45,6 +47,11 @@ local plugins = {
     {
         'ms-jpq/coq.artifacts',
         branch = 'artifacts',
+    },
+
+    {
+        'ms-jpq/coq.thirdparty',
+        branch = '3p',
     },
 
     {
