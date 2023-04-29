@@ -20,14 +20,12 @@ local plugins = {
     'j-hui/fidget.nvim',
     'numToStr/FTerm.nvim',
     'mrjones2014/nvim-ts-rainbow',
-    'jay-babu/mason-nvim-dap.nvim',
     'folke/neodev.nvim',
     'kylechui/nvim-surround',
     'marko-cerovac/material.nvim',
     'sunjon/Shade.nvim',
     'RRethy/vim-illuminate',
     'simrat39/rust-tools.nvim',
-    'mfussenegger/nvim-dap',
     'marko-cerovac/material.nvim',
 
     {
@@ -72,8 +70,8 @@ local plugins = {
     },
 
     {
-        'nvim-tree/nvim-tree.lua',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        'ms-jpq/chadtree',
+        branch = "chad",
     },
 
     {
@@ -84,11 +82,6 @@ local plugins = {
     {
         'folke/trouble.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
-    },
-
-    {
-        'rcarriga/nvim-dap-ui',
-        dependencies = { 'mfussenegger/nvim-dap' }
     },
 }
 
