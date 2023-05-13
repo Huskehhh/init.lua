@@ -18,34 +18,6 @@ lsp.ensure_installed({
     'marksman',
 })
 
-local cmp = require("cmp")
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-        ["<C-Space>"] = cmp.mapping.complete(),
-        ['<Tab>'] = cmp.mapping(function(fallback)
-            local copilot_keys = vim.fn['copilot#Accept']()
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-            elseif copilot_keys ~= '' and type(copilot_keys) == 'string' then
-                vim.api.nvim_feedkeys(copilot_keys, 'i', true)
-            else
-                fallback()
-            end
-        end, {
-            'i',
-            's',
-        }),
-    })
-
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
-})
-
 lsp.set_preferences({
     suggest_lsp_servers = false,
 })
@@ -66,6 +38,34 @@ end)
 
 lsp.nvim_workspace()
 lsp.setup()
+
+local cmp = require("cmp")
+local cmp_action = require('lsp-zero').cmp_action()
+
+local cmp_mappings = lsp.defaults.cmp_mappings({
+    ['<Tab>'] = cmp_action.luasnip_supertab(),
+    ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+})
+
+cmp.setup({
+    mapping = cmp_mappings,
+    sources = {
+        { name = 'path' },
+        { name = 'nvim_lsp' },
+        { name = 'buffer',  keyword_length = 3 },
+        { name = 'luasnip', keyword_length = 2 },
+        { name = "codeium" },
+    },
+    formatting = {
+        fields = { 'abbr', 'kind', 'menu' },
+        format = require('lspkind').cmp_format({
+            mode = 'symbol', -- show only symbol annotations
+            maxwidth = 50,   -- prevent the popup from showing more than provided characters
+            ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead
+        })
+    }
+})
 
 vim.diagnostic.config({
     virtual_text = true,

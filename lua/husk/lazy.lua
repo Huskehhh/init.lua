@@ -16,7 +16,6 @@ local plugins = {
     'mbbill/undotree',
     'tpope/vim-fugitive',
     'lewis6991/gitsigns.nvim',
-    'github/copilot.vim',
     'j-hui/fidget.nvim',
     'numToStr/FTerm.nvim',
     'mrjones2014/nvim-ts-rainbow',
@@ -29,7 +28,8 @@ local plugins = {
     'marko-cerovac/material.nvim',
 
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.0',
         dependencies = { 'nvim-lua/plenary.nvim' },
     },
 
@@ -43,7 +43,8 @@ local plugins = {
     },
 
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.0',
         dependencies = { 'nvim-lua/plenary.nvim' },
     },
 
@@ -61,6 +62,7 @@ local plugins = {
             { 'hrsh7th/cmp-nvim-lua' },
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
+            { 'onsails/lspkind.nvim' },
         }
     },
 
@@ -82,6 +84,17 @@ local plugins = {
     {
         'folke/trouble.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+
+    {
+        "jcdickinson/codeium.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "hrsh7th/nvim-cmp",
+        },
+        config = function()
+            require("codeium").setup({})
+        end
     },
 }
 
