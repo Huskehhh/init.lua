@@ -85,17 +85,6 @@ local plugins = {
         'folke/trouble.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
-
-    {
-        "jcdickinson/codeium.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "hrsh7th/nvim-cmp",
-        },
-        config = function()
-            require("codeium").setup({})
-        end
-    },
 }
 
 require('lazy').setup(plugins)
