@@ -2,25 +2,23 @@ local lsp = require('lsp-zero')
 local luasnip = require('luasnip')
 lsp.preset('recommended')
 
-lsp.ensure_installed({
-    'clangd',
-    'ruff_lsp',
-    'tsserver',
-    'rust_analyzer',
-    'cmake',
-    'cssls',
-    'dockerls',
-    'docker_compose_language_service',
-    'eslint',
-    'html',
-    'jsonls',
-    'lua_ls',
-    'marksman',
-})
-
-lsp.set_preferences({
-    suggest_lsp_servers = false,
-})
+require("mason-lspconfig").setup {
+    ensure_installed = {
+        'clangd',
+        'ruff_lsp',
+        'tsserver',
+        'rust_analyzer',
+        'cmake',
+        'cssls',
+        'dockerls',
+        'docker_compose_language_service',
+        'eslint',
+        'html',
+        'jsonls',
+        'lua_ls',
+        'marksman',
+    }
+}
 
 lsp.on_attach(function(_, bufnr)
     local opts = { buffer = bufnr, remap = false }
@@ -59,8 +57,8 @@ cmp.setup({
     formatting = {
         fields = { 'abbr', 'kind', 'menu' },
         format = require('lspkind').cmp_format({
-            mode = 'symbol', -- show only symbol annotations
-            maxwidth = 50,   -- prevent the popup from showing more than provided characters
+            mode = 'symbol',       -- show only symbol annotations
+            maxwidth = 50,         -- prevent the popup from showing more than provided characters
             ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead
         })
     }
