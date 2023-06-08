@@ -72,9 +72,8 @@ local plugins = {
     },
 
     {
-        'ms-jpq/chadtree',
-        branch = "chad",
-        build = { "python3 -m chadtree deps" }
+        'nvim-tree/nvim-tree.lua',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
 
     {

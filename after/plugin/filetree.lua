@@ -1,3 +1,3 @@
-require("chadtree")
+require("nvim-tree").setup()
 
-vim.keymap.set("n", "<leader><tab>", vim.cmd.CHADopen)
+vim.keymap.set("n", "<leader><tab>", vim.cmd.NvimTreeToggle)
