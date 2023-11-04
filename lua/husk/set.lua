@@ -29,17 +29,16 @@ vim.opt.colorcolumn = "80"
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd("TextYankPost", {
-    desc = "highlight on yank",
-    callback = function()
-        vim.highlight.on_yank({ higroup = "IncSearch", timeout = "200" })
-    end,
+	desc = "highlight on yank",
+	callback = function()
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = "200" })
+	end,
 })
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
--- Copilot specific settings.
-vim.g.copilot_no_tab_map = true
-vim.g.copilot_assume_mapped = true
-vim.g.copilot_tab_fallback = ""
+-- Disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
