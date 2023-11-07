@@ -189,6 +189,13 @@ local plugins = {
 		event = "InsertEnter",
 		opts = {},
 	},
+
+	{
+		"FabijanZulj/blame.nvim",
+		config = function()
+			require("blame").setup()
+		end,
+	},
 }
 
 require("lazy").setup(plugins)

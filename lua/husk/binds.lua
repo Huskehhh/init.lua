@@ -67,3 +67,6 @@ end)
 vim.keymap.set("n", "<leader>0", function()
 	ui.nav_file(10)
 end)
+
+-- Blame
+vim.keymap.set("n", "<leader>gb", vim.cmd.ToggleBlame)

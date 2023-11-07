@@ -7,6 +7,9 @@ require("material").setup({
 		"nvim-web-devicons",
 		"telescope",
 		"trouble",
+		"illuminate",
+		"harpoon",
+		"telescope",
 	},
 })
 
