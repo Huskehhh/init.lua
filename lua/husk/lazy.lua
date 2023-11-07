@@ -58,9 +58,9 @@ local plugins = {
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
-        opts = function()
+		opts = function()
 			return require("husk.plugins.telescope")
-        end
+		end,
 	},
 
 	{

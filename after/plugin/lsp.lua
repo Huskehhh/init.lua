@@ -86,5 +86,5 @@ mason_lspconfig.setup({
 		"lua_ls",
 		"cmake",
 	},
-    automatic_installation = true,
+	automatic_installation = true,
 })
