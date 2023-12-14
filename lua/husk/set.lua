@@ -1,5 +1,7 @@
 vim.g.mapleader = " "
 
+vim.opt.clipboard = { "unnamed", "unnamedplus" }
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -26,6 +28,14 @@ vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
+
+-- Disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd("TextYankPost", {
@@ -35,10 +45,8 @@ autocmd("TextYankPost", {
 	end,
 })
 
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
-
--- Disable netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+autocmd("VimResized", {
+    desc = "handle vim resizing",
+    pattern = "*",
+    command = "tabdo wincmd =",
+})
