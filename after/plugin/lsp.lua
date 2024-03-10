@@ -78,13 +78,5 @@ require("mason").setup()
 local mason_lspconfig = require("mason-lspconfig")
 
 mason_lspconfig.setup({
-	ensure_installed = {
-		"clangd",
-		"rust_analyzer",
-		"ruff_lsp",
-		"pyright",
-		"lua_ls",
-		"cmake",
-	},
-	automatic_installation = true,
+	automatic_installation = false,
 })

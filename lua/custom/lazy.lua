@@ -23,7 +23,7 @@ local plugins = {
 	{
 		"marko-cerovac/material.nvim",
 		config = function()
-			require("husk.plugins.material")
+			require("custom.plugins.material")
 		end,
 	},
 
@@ -59,7 +59,7 @@ local plugins = {
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = function()
-			return require("husk.plugins.telescope")
+			return require("custom.plugins.telescope")
 		end,
 	},
 
@@ -67,7 +67,7 @@ local plugins = {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		config = function()
-			require("husk.plugins.treesitter")
+			require("custom.plugins.treesitter")
 		end,
 	},
 
@@ -119,7 +119,7 @@ local plugins = {
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
-			require("husk.plugins.lualine")
+			require("custom.plugins.lualine")
 		end,
 	},
 
@@ -143,7 +143,7 @@ local plugins = {
 		"lvimuser/lsp-inlayhints.nvim",
 		lazy = false,
 		config = function()
-			require("husk.plugins.inlayhints")
+			require("custom.plugins.inlayhints")
 		end,
 	},
 
@@ -169,7 +169,7 @@ local plugins = {
 		"jose-elias-alvarez/null-ls.nvim",
 		lazy = false,
 		config = function()
-			require("husk.plugins.null-ls")
+			require("custom.plugins.null-ls")
 		end,
 	},
 
